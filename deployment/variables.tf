@@ -81,11 +81,11 @@ variable "address_space" {
   default     = "10.2.0.0/16"
 }
 variable "min_count" {
-  default     = 1
+  default     = 3
   description = "Minimum Node Count"
 }
 variable "max_count" {
-  default     = 2
+  default     = 7
   description = "Maximum Node Count"
 }
 

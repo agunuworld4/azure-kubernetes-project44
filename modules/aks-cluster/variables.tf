@@ -80,7 +80,7 @@ variable "min_count" {
   description = "Minimum Node Count"
 }
 variable "max_count" {
-  default     = 5
+  default     = 7
   description = "Maximum Node Count"
 }
 variable "default_pool_name" {
