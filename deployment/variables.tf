@@ -4,7 +4,7 @@ variable "client_secret" {}
 
 variable "node_count" {
   description = "number of nodes to deploy"
-  default     = 2
+  default     = 3
 }
 
 variable "dns_prefix" {
