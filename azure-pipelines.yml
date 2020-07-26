@@ -24,16 +24,9 @@ steps:
     backendAzureRmStorageAccountName: 'storageagunuworldxyz'
     backendAzureRmContainerName: 'storageagunuworldcontainer'
     backendAzureRmKey: 'kubernetes-dev.tfstate'
-# - task: TerraformCLI@0
-#   inputs:
-#     command: 'apply'
-#     workingDirectory: '$(System.DefaultWorkingDirectory)/azure_TerraForm_second/kubernetes'
-#     environmentServiceName: 'azure-TerraForm-authetication-connection-agunuworld4'
-#     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
-- task: TerraformTaskV1@0
-  displayName: Terra Apply
+- task: TerraformCLI@0
   inputs:
-    provider: 'azurerm'
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/azure_TerraForm_second/kubernetes'
-    environmentServiceNameAzureRM: 'azure-TerraForm-authetication-connection-agunuworld4'
+    environmentServiceName: 'azure-TerraForm-authetication-connection-agunuworld4'
+    commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
