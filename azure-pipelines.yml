@@ -21,7 +21,7 @@ steps:
     backendServiceArm: 'azure-TerraForm-authetication-connection-agunuworld4'
     ensureBackend: true
     backendAzureRmResourceGroupName: 'terraform-backend-rg'
-    backendAzureRmResourceGroupLocation: 'Central US'
+    backendAzureRmResourceGroupLocation: 'centralus'
     backendAzureRmStorageAccountName: 'storageacctragunuworldxyz'
     backendAzureRmContainerName: 'storageacctragunuworldcontainer'
     backendAzureRmKey: 'kubernetes-dev.tfstate'
