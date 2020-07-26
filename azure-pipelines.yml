@@ -1,0 +1,33 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo K8S Terraform Azure!
+  displayName: 'Run a one-line script'
+- task: DownloadSecureFile@1
+  name: publickey
+  inputs:
+    secureFile: 'azure_rsa_pub4'
+
+- task: TerraformCLI@0
+  inputs:
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/azure_TerraForm_second/kubernetes'
+    commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
+    backendType: 'azurerm'
+    backendServiceArm: 'azure-resource-manager-service-connection'
+    ensureBackend: true
+    backendAzureRmResourceGroupName: 'terraform-backend-rg'
+    backendAzureRmResourceGroupLocation: 'Central US'
+    backendAzureRmStorageAccountName: 'storageacctragunuworldxyz'
+    backendAzureRmContainerName: 'storageacctragunuworldcontainer'
+    backendAzureRmKey: 'kubernetes-dev.tfstate'
+
+# - task: TerraformCLI@0
+#   inputs:
+#     command: 'destroy'
+#     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
+#     environmentServiceName: 'azure-resource-manager-service-connection'
