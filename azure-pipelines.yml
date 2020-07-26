@@ -22,8 +22,8 @@ steps:
     ensureBackend: true
     backendAzureRmResourceGroupName: 'terraform-backend-rg'
     backendAzureRmResourceGroupLocation: 'centralus'
-    backendAzureRmStorageAccountName: 'storageacctragunuworldxyz'
-    backendAzureRmContainerName: 'storageacctragunuworldcontainer'
+    backendAzureRmStorageAccountName: 'storageagunuworldxyz'
+    backendAzureRmContainerName: 'storageagunuworldcontainer'
     backendAzureRmKey: 'kubernetes-dev.tfstate'
 
 # - task: TerraformCLI@0
